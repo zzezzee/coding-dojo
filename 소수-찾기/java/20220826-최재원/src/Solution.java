@@ -2,20 +2,20 @@ public class Solution {
     public int solution(int n) {
         int answer = 0;
 
-        int big = 1000001;
+        int range = 1000001;
 
-        int[] numbers = new int[big];
+        int[] numbers = new int[range];
 
-        for(int i = 0; i<big; i += 1){
+        for(int i = 0; i<range; i += 1){
             numbers[i] = i;
         }
 
-        for(int i = 2; i<big; i+=1){
+        for(int i = 2; i<range; i+=1){
             if(numbers[i] == 0){
                 continue;
             }
 
-            for(int j = 2; j<big/i; j+=1)
+            for(int j = 2; j<range/i; j+=1)
                 numbers[i*j] = 0;
         }
 
