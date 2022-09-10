@@ -1,18 +1,20 @@
 class Solution {
     boolean solution(String s) {
+        boolean answer = true;
+
         String lowerCase = s.toLowerCase();
 
         int pCount = 0;
         int yCount = 0;
 
         for (int i = 0; i < lowerCase.length(); i += 1) {
-            char charAt = lowerCase.charAt(i);
+            char charAt1 = lowerCase.charAt(i);
 
-            if (charAt == 'p') {
+            if (charAt1 == 'p') {
                 pCount += 1;
             }
 
-            if (charAt == 'y') {
+            if (charAt1 == 'y') {
                 yCount += 1;
             }
         }
