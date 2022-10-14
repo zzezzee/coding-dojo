@@ -3,9 +3,9 @@ import java.util.Map;
 
 public class Solution {
     public int[] solution(int N, int[] stages) {
-        Map<Integer, Integer> failPerPlePerStage = failPeoplePerStage(N, stages);
+        Map<Integer, Integer> failPeoplePerStage = failPeoplePerStage(N, stages);
 
-        Map<Integer, Double> failRate = calculateFailRate(N, stages.length, failPerPlePerStage);
+        Map<Integer, Double> failRate = calculateFailRate(N, stages.length, failPeoplePerStage);
 
         return sort(failRate);
     }
@@ -37,7 +37,7 @@ public class Solution {
         for (int i = 1; i <= n; i += 1) {
             if (length == accumulator) {
                 failRatePerStage.put(i, 0.0);
-                break;
+                continue;
             }
 
             failRate = failPeoplePerStage.get(i) / (double) (length - accumulator);
