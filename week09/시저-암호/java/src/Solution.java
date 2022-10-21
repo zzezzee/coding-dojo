@@ -23,14 +23,13 @@ public class Solution {
         for (int i = 0; i < charArr.length; i += 1) {
             if(charArr[i] >= 65 && charArr[i] <= 90){
                 pushedNumber[i] = 65 + ((charArr[i] + distance - 65) % 26);
-                continue;
             }
             if(charArr[i] >= 97 && charArr[i] <= 122){
                 pushedNumber[i] = 97 + ((charArr[i] + distance - 97) % 26);
-                continue;
             }
-
-            pushedNumber[i] = charArr[i];
+            if(charArr[i] == 32){
+                pushedNumber[i] = charArr[i];
+            }
         }
 
         char[] s = new char[pushedNumber.length];
