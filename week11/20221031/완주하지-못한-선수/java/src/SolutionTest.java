@@ -14,4 +14,16 @@ class SolutionTest {
 
         assertEquals("leo", answer);
     }
+
+    @Test
+    void compare2() {
+        Solution solution = new Solution();
+
+        String[] participant = {"aeo",  "eden"};
+        String[] completion = {"eden"};
+
+        String answer = solution.compare(participant, completion);
+
+        assertEquals("aeo", answer);
+    }
 }

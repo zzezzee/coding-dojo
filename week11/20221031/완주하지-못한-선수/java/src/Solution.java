@@ -1,26 +1,20 @@
 import java.util.Arrays;
 
 public class Solution {
+    public String solution(String[] participant, String[] completion) {
+        return compare(participant, completion);
+    }
+
     public String compare(String[] participant, String[] completion) {
         Arrays.sort(completion);
+        Arrays.sort(participant);
 
-        for (int i = 0; i < participant.length; i++) {
-            boolean isFound = false;
-
-            for (int j = 0; j < completion.length; j++) {
-                if(participant[i].equals(completion[j])){
-                    completion[j] = "0";
-                    isFound = true;
-                    System.out.println(isFound);
-                    break;
-                }
-            }
-
-            if(!isFound) {
+        for (int i = 0; i < completion.length; i += 1) {
+            if(!participant[i].equals(completion[i])){
                 return participant[i];
             }
         }
 
-        return "dd";
+        return participant[participant.length-1];
     }
 }
