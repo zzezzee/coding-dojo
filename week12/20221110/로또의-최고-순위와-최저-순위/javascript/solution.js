@@ -2,7 +2,7 @@ function test() {
   console.log(`collectCount([44, 1, 0, 0, 31, 25], [31, 10, 45, 1, 6, 19]): 2 
   = ${getCollectCount([44, 1, 0, 0, 31, 25], [31, 10, 45, 1, 6, 19])}`);
 
-  console.log(`zeroCount([44, 1, 0, 0, 31, 25]): 2 
+  console.log(`zeroCount([44, 1, 0, 0, 31, 25]): 2
   = ${getZeroCount([44, 1, 0, 0, 31, 25])}`);
 
   console.log(`ranking(2, 2): [3, 5] = ${ranking(2, 2)}`);
@@ -30,16 +30,15 @@ function ranking(collectCount, zeroCount) {
 
   const counts = [highestCount, lowestCount];
 
-  return counts.map(count => {
-    switch (count) {
-      case 6: return 1;
-      case 5: return 2;
-      case 4: return 3;
-      case 3: return 4;
-      case 2: return 5;
-      default: return 6;
-    }
-  });
+  return counts.map(count => count <= 1 ? 6 : getRanking[count] );
+}
+
+const getRanking = {
+  6:1,
+  5:2,
+  4:3,
+  3:4,
+  2:5,
 }
 
 // test();
