@@ -16,29 +16,27 @@ public class Solution {
     private final List<Integer> middleNumbers = Arrays.asList(2, 5, 8, 0);
     private final List<Integer> rightNumbers = Arrays.asList(3, 6, 9);
 
-
     public String solution(int[] numbers, String hand) {
         hand = hand.equals("right") ? "R" : "L";
 
-        String answer = "";
+        StringBuilder answer = new StringBuilder();
 
         for (int i = 0; i < numbers.length; i++) {
             if (leftNumbers.contains(numbers[i])) {
-                answer = answer + "L";
+                answer.append("L");
                 saveLeftPosition(numbers[i]);
             }
             if (rightNumbers.contains(numbers[i])) {
-                answer = answer + "R";
+                answer.append("R");
                 saveRightPosition(numbers[i]);
             }
             if (middleNumbers.contains(numbers[i])) {
                 String s = handDiscriminator(numbers[i], hand);
-                answer = answer + s;
+                answer.append(s);
             }
         }
 
-
-        return answer;
+        return answer.toString();
     }
 
     private String handDiscriminator(int number, String hand) {

@@ -24,4 +24,16 @@ class SolutionTest {
         assertEquals(1, position[0]);
         assertEquals(0, position[1]);
     }
+
+    @Test
+    void solution() {
+        Solution solution = new Solution();
+
+        int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+        String hand = "right";
+
+        String result = solution.solution(numbers, hand);
+
+        assertEquals("LLRLLRLLRL", result);
+    }
 }
