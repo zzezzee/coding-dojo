@@ -1,28 +1,14 @@
 class Solution {
     public String solution(String s) {
-        return toUppercase(split(s));
-    }
-
-    public String toUppercase(String[] words) {
         String answer = "";
+        String[] sp = s.toLowerCase().split("");
+        boolean flag = true;
 
-        boolean space = true;
-
-        for (String word : words) {
-            space = !word.equals("");
-
-            if (space) {
-                answer += word.substring(0, 1).toUpperCase()
-                 + word.substring(1) + " ";
-            }
+        for(String ss : sp) {
+            answer += flag ? ss.toUpperCase() : ss;
+            flag = ss.equals(" ") ? true : false;
         }
 
-        return answer.trim();
-    }
-
-    public String[] split(String s) {
-        String[] words = s.toLowerCase().split(" ");
-
-        return words;
+        return answer;
     }
 }
