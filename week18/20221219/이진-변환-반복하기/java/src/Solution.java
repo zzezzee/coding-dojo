@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.stream.IntStream;
+
 class Solution {
     private int zeroCount = 0;
     private int totalCycle = 0;
@@ -6,10 +9,8 @@ class Solution {
         if(s.equals("1")){
             return new int[]{totalCycle, zeroCount};
         }
-
         totalCycle += 1;
 
-        int[] answer = {};
         int length = s.length();
 
         int oneCount = 0;
