@@ -14,13 +14,10 @@ class Solution {
         int length = s.length();
 
         int oneCount = 0;
-
-        StringBuilder stringWithoutZero = new StringBuilder();
-
+        
         for (int i = 0; i < s.length(); i += 1) {
             if(s.charAt(i) == '1'){
                 oneCount += 1;
-                stringWithoutZero.append("1");
             }
         }
 
